@@ -1,0 +1,10 @@
+cargo-features = ["edition"]
+
+[package]
+name = "echo"
+version = "0.1.0"
+authors = ["Nick Cameron <ncameron@mozilla.com>"]
+edition = "2018"
+
+[dependencies]
+tokio-async-await = "0.1.1"
