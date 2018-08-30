@@ -6,7 +6,7 @@ This book aims to be a comprehensive, up-to-date guide on the async story in Rus
 
 In this guide we'll start with high-level programming using `async`/`await`, then gradually descend the technology stack to cover lower-level primitives that can give you more control and flexibility, and libraries for specific tasks: futures, event loops, and asynchronous IO and networking.
 
-If you want to run or experiment with the examples in the introduction, the first few examples are in the [small](examples/small) project, and the echo server is at [echo](examples/echo).
+If you want to run or experiment with the examples in the introduction, the first few examples are in the [small](examples/small) project, and the echo server is at [echo](examples/echo). Currently, the examples only work with a recent, but not very recent nightly, e.g., 2018-08-26. To install, use `rustup update nightly-2018-08-26`, then to build the examples use `cargo +nightly-2018-08-26 build` (and similarly to run).
 
 
 ## Models of computation
