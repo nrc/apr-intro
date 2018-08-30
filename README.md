@@ -54,7 +54,7 @@ Here we don't know which task will start or finish first. On the bright side, we
 
 ### Asynchronous
 
-Asynchronous programming is concurrent but not parallel. It happens on a single thread (though later we'll see how to use multiple treads too), but if one tasks needs to waiting for something, another task can execute and make progress.
+Asynchronous programming is concurrent but not parallel. It happens on a single thread (though later we'll see how to use multiple threads too), but if one tasks needs to waiting for something, another task can execute and make progress.
 
 The highest level of abstraction for asynchronous programming uses `async` and `await` syntax. We'll see lower level versions later. `async` marks a function (or block) which can be executed asynchronously. `await` can only be used inside an `async` function (or block), it starts executing asynchronous code and then blocks until that code completes. While a task is blocked in an `await`, other tasks can make progress.
 
@@ -71,7 +71,7 @@ fn main() {
 }
 ```
 
-In `async_seq`, wdo_another_thing_asynce call two `async` functions, `await`ing both. The `await`s cause the functions to be called sequentially. Just like in our sequential example, `do_one_thing_async` finishes before `do_another_thing_async` starts.
+In `async_seq`, do_another_thing_async call two `async` functions, `await`ing both. The `await`s cause the functions to be called sequentially. Just like in our sequential example, `do_one_thing_async` finishes before `do_another_thing_async` starts.
 
 ```rust
 async fn async_concurrent() {
