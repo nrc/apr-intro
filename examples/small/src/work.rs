@@ -37,7 +37,7 @@ pub async fn do_work_async(x: i32) {
 
     // This task will be repeatedly polled until it has completed. We handle that
     // in the below statement. This will all be explained in detail later.
-    await!(poll_fn(|cx| {
+    await!(poll_fn(|lw| {
         if flag.load(Ordering::SeqCst) {
             // Work' is done, notify the user and let the scheduler know we're done.
             println!("work done! {} on thread {:?}", x, thread::current().id());
@@ -45,7 +45,7 @@ pub async fn do_work_async(x: i32) {
         } else {
             // The timeout has not expired yet. Ask the scheduler to try again
             // later.
-            cx.local_waker().wake();
+            lw.wake();
             Poll::Pending
         }
     }))
