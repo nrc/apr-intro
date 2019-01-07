@@ -1,4 +1,4 @@
-#![feature(async_await, await_macro, futures_api, generators, pin)]
+#![feature(async_await, await_macro, futures_api, generators)]
 
 use futures::executor::block_on;
 use futures::join;
